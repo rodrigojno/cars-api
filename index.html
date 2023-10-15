@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seu Site</title>
+</head>
+<body>
+    
+    <pre id="json-content"></pre>
+
+    <script>
+        // Carrega o arquivo JSON usando fetch
+        fetch('cars.json')
+            .then(response => response.json())
+            .then(data => {
+                // Exibe o conteúdo do JSON na página
+                document.getElementById('json-content').textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                console.error('Erro ao carregar o arquivo JSON: ' + error);
+            });
+    </script>
+</body>
+</html>
